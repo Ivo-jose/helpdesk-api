@@ -1,8 +1,14 @@
 package com.ivogoncalves.helpdesk;
 
+
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author ivogoncalves
+ *
+ */
 @SpringBootApplication
 public class HelpdeskApplication {
 	
