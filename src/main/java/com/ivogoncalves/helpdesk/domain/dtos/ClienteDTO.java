@@ -11,18 +11,18 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.br.CPF;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.ivogoncalves.helpdesk.domain.Tecnico;
+import com.ivogoncalves.helpdesk.domain.Cliente;
 import com.ivogoncalves.helpdesk.domain.enums.Perfil;
 
-public class TecnicoDTO implements Serializable {
+public class ClienteDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private Integer id;
 	@NotNull(message = "O campo NOME é requerido")
 	private String nome;
 	@NotNull(message = "O campo CPF é requerido")
-	@CPF	
+	@CPF
 	private String cpf;
 	@NotNull(message = "O campo EMAIL é requerido")
 	private String email;
@@ -31,13 +31,14 @@ public class TecnicoDTO implements Serializable {
 	private Set<Integer> perfis = new HashSet<>();
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate dataCriacao = LocalDate.now();
+
 	
-	public TecnicoDTO() {
+	public ClienteDTO() {
 		super();
 		addPerfis(Perfil.CLIENTE);
 	}
 	
-	public TecnicoDTO(Tecnico obj) {
+	public ClienteDTO(Cliente obj) {
 		super();
 		this.id = obj.getId();
 		this.nome = obj.getNome();
@@ -48,10 +49,10 @@ public class TecnicoDTO implements Serializable {
 		this.dataCriacao = obj.getDataCriacao();
 		addPerfis(Perfil.CLIENTE);
 	}
-
+	
 	public Integer getId() {
 		return id;
-	} 
+	}
 
 	public void setId(Integer id) {
 		this.id = id;
@@ -103,5 +104,5 @@ public class TecnicoDTO implements Serializable {
 
 	public void setDataCriacao(LocalDate dataCriacao) {
 		this.dataCriacao = dataCriacao;
-	}
+	} 
 }
