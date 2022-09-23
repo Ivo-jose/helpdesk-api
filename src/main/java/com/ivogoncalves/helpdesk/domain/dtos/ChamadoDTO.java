@@ -20,7 +20,7 @@ public class ChamadoDTO implements Serializable {
 	private String titulo;
 	private String observacoes;
 	
-	//Assoaciações
+	
 	private Integer tecnico;
 	private Integer cliente;
 	private String nomeTecnico;
